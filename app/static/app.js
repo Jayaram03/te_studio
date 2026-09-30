@@ -935,6 +935,8 @@ async function stAI(el) {
       <label class="w100">AI provider<select id="ai-prov" class="w100">${c.providers.map(p => `<option value="${p.id}" ${p.id === c.provider ? "selected" : ""}>${esc(p.label)}</option>`).join("")}</select></label>
       <div class="small muted" id="ai-note" style="margin:-4px 0 10px">${esc(prov.note)}</div>
       <label class="w100">Model<input id="ai-model" class="w100" list="ai-models" value="${esc(c.model || "")}" placeholder="exact model name from the provider"><datalist id="ai-models">${prov.models.map(m => `<option value="${esc(m)}">`).join("")}</datalist></label>
+      <label class="w100">Backup models <span class="muted">(comma separated, tried in order when the model above hits its limit or is busy)</span>
+        <input id="ai-fb" class="w100" list="ai-models" value="${esc((c.fallback_models || []).join(", "))}" placeholder="e.g. gemini-3.7-flash, gemini-3.5-flash"></label>
       <label class="w100 ${prov.kind === "anthropic" ? "hidden" : ""}" id="ai-base-wrap">Base URL<input id="ai-base" class="w100" value="${esc(c.base_url || "")}" placeholder="https://…/v1"></label>
       <label class="w100">API key <span id="ai-keypill">${c.key_set ? `<span class="pill ok">${esc(c.key_hint)} · ${c.key_source === "app" ? "saved in app" : "from " + esc(c.key_env_var)}</span>` : `<span class="pill bad">not set</span>`}</span>
         <input id="ai-key" type="password" class="w100" autocomplete="off" placeholder="${c.key_set ? "leave empty to keep the current key" : "paste the key"}" ${c.can_save_keys ? "" : "disabled"}></label>
@@ -966,7 +968,7 @@ async function stAI(el) {
   $("#ai-prov").onchange = e => {
     const p = c.providers.find(x => x.id === e.target.value);
     $("#ai-note").textContent = p.note; $("#ai-base-wrap").classList.toggle("hidden", p.kind === "anthropic"); $("#ai-pages-wrap").classList.toggle("hidden", p.kind === "anthropic");
-    $("#ai-base").value = p.base_url || ""; $("#ai-model").value = p.default_model || "";
+    $("#ai-base").value = p.base_url || ""; $("#ai-model").value = p.default_model || ""; $("#ai-fb").value = (p.default_fallbacks || []).join(", ");
     $("#ai-models").innerHTML = p.models.map(m => `<option value="${esc(m)}">`).join("");
     $("#ai-key").placeholder = "paste the " + p.label + " key";
     // the key badge must describe the key the *selected* provider would use
@@ -978,7 +980,8 @@ async function stAI(el) {
   const save = async () => {
     const body = {provider: $("#ai-prov").value, model: $("#ai-model").value, base_url: $("#ai-base").value, enabled: $("#ai-on").checked,
       max_tokens: $("#ai-max").value, price_input_per_mtok: $("#ai-pin").value, price_output_per_mtok: $("#ai-pout").value,
-      price_currency: $("#ai-cur").value, monthly_budget: $("#ai-budget").value, extra_instructions: $("#ai-extra").value, max_pdf_pages: $("#ai-pages").value};
+      price_currency: $("#ai-cur").value, monthly_budget: $("#ai-budget").value, extra_instructions: $("#ai-extra").value, max_pdf_pages: $("#ai-pages").value,
+      fallback_models: $("#ai-fb").value};
     if ($("#ai-key").value) body.api_key = $("#ai-key").value;
     try { await put("/api/ai/settings", body); toast("AI settings saved"); stAI(el); } catch (e) { toast(e.message, true); }
   };

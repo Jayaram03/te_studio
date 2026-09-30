@@ -179,3 +179,65 @@ def test_budget_counts_calls_made_before_prices_were_set(session):
     import pytest
     with pytest.raises(ai.AIError, match="budget"):
         ai.build_extractor(session)                                       # 24 >= 20 -> stops, as the screen says
+
+
+def test_backup_models_take_over_when_one_hits_its_free_limit(session):
+    """Gemini free tier: limits are per model. A 429 on one model moves the document to the next backup."""
+    answer = json.loads((FIXTURES / "misty_hills_munnar_2026-27.json").read_text())
+    calls = []
+
+    def handler(request: httpx.Request):
+        body = json.loads(request.content)
+        calls.append(body["model"])
+        if body["model"] == "gemini-3.8-flash":
+            return httpx.Response(429, json={"error": {"code": 429, "status": "RESOURCE_EXHAUSTED",
+                                                       "message": "Quota exceeded for requests per day"}})
+        if body["model"] == "gemini-3.7-flash":
+            return httpx.Response(503, json={"error": {"code": 503, "message": "The model is overloaded"}})
+        return httpx.Response(200, json={"choices": [{"finish_reason": "tool_calls", "message": {"tool_calls": [
+            {"type": "function", "function": {"name": "record_extraction", "arguments": json.dumps(answer)}}]}}],
+            "usage": {"prompt_tokens": 5000, "completion_tokens": 2500}})
+    ai.save(session, {"provider": "gemini", "model": "gemini-3.8-flash",
+                      "fallback_models": "gemini-3.7-flash, gemini-3.6-flash, gemini-3.5-flash"})
+    cfg = ai.load(session)
+    assert cfg["fallback_models"] == ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash"]
+    ex = OpenAICompatExtractor("https://example.test/v1beta/openai", "k", cfg["model"], provider="gemini",
+                               recorder=ai.recorder(session, cfg, "extraction"), transport=httpx.MockTransport(handler),
+                               fallback_models=cfg["fallback_models"])
+    out = ex.extract(parse_file(SAMPLES / "misty_hills_munnar_2026-27.pdf"), "misty.pdf")
+    assert len(out["hotels"][0]["rates"]) == 50
+    assert calls == ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash"] and ex.model_name == "gemini-3.6-flash"
+    rows = session.scalars(select(db.AIUsage).order_by(db.AIUsage.id)).all()
+    assert [(r.model, r.ok) for r in rows] == [("gemini-3.8-flash", False), ("gemini-3.7-flash", False), ("gemini-3.6-flash", True)]
+    assert "limit reached" in rows[0].error
+
+
+def test_when_every_model_is_used_up_the_message_says_so(session):
+    def handler(request):
+        return httpx.Response(429, json={"error": {"status": "RESOURCE_EXHAUSTED"}})
+    ex = OpenAICompatExtractor("https://example.test/v1", "k", "a", provider="gemini", transport=httpx.MockTransport(handler),
+                               fallback_models=["b"])
+    import pytest
+    with pytest.raises(RuntimeError, match="Every model's limit is used up"):
+        ex.extract(parse_file(SAMPLES / "misty_hills_munnar_2026-27.pdf"), "misty.pdf")
+
+
+def test_a_real_error_is_not_retried_on_other_models(session):
+    seen = []
+
+    def handler(request):
+        seen.append(1)
+        return httpx.Response(401, json={"error": {"message": "API key not valid"}})
+    ex = OpenAICompatExtractor("https://example.test/v1", "k", "a", provider="gemini", transport=httpx.MockTransport(handler),
+                               fallback_models=["b", "c"])
+    import pytest
+    with pytest.raises(RuntimeError, match="401"):
+        ex.extract(parse_file(SAMPLES / "misty_hills_munnar_2026-27.pdf"), "misty.pdf")
+    assert len(seen) == 1
+
+
+def test_gemini_gets_a_plainer_schema():
+    from app.extractor import simplify
+    s = json.dumps(simplify(dereference(tool_schema())))
+    assert '"type": "null"' not in s and '"default"' not in s and '"nullable": true' in s
+    assert '"hotels"' in s and '"base_name"' in s

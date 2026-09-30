@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import base64
 import io
+import logging
 import json
 import time
 from pathlib import Path
@@ -76,6 +77,16 @@ OTHER
 rounded or calculated; every rate line has its room type, meal plan, occupancy and dates or season."""
 
 TOOL_NAME = "record_extraction"
+log = logging.getLogger(__name__)
+
+
+class RateLimited(RuntimeError):
+    """The provider refused because of a rate limit / quota / overload: the next backup model may still work."""
+
+
+def _is_rate_limit(status: int, text: str) -> bool:
+    t = (text or "").lower()
+    return status in (429, 503, 529) or "resource_exhausted" in t or "quota" in t or "rate limit" in t or "overloaded" in t
 
 
 class Extractor(Protocol):
@@ -98,9 +109,14 @@ class _AIExtractor:
     provider = "ai"
     system_prompt = SYSTEM_PROMPT            # extended per instance with the agency's extra instructions
 
-    def __init__(self, model: str, max_tokens: int | None = None, recorder=None, extra_instructions: str | None = None):
+    def __init__(self, model: str, max_tokens: int | None = None, recorder=None, extra_instructions: str | None = None,
+                 fallback_models: list[str] | None = None):
         self.settings = get_settings()
         self.model_name = model
+        # backups, tried in order when a model hits its rate limit / quota or is overloaded (free tiers have
+        # separate limits per model). A model that ran out stays skipped for the rest of this document.
+        self.models = [model] + [m for m in (fallback_models or []) if m and m != model]
+        self.exhausted: set[str] = set()
         self.max_tokens = max_tokens or self.settings.extraction_max_tokens
         self.recorder = recorder
         extra = (extra_instructions or "").strip()
@@ -130,16 +146,28 @@ class _AIExtractor:
         return merge_extractions(results)
 
     def _timed(self, parts) -> dict:
-        t0 = time.time()
-        usage = {"in": 0, "out": 0}
-        try:
-            raw = self._call(parts, usage)
-            out = Extraction.model_validate(raw).model_dump()
-            self._record(usage, t0, True)
-            return out
-        except Exception as e:
-            self._record(usage, t0, False, f"{type(e).__name__}: {e}")
-            raise
+        last = None
+        if not getattr(self, "models", None):                    # built without __init__ (tests)
+            self.models, self.exhausted = [self.model_name], set()
+        for model in [m for m in self.models if m not in self.exhausted]:
+            self.model_name = model
+            t0 = time.time()
+            usage = {"in": 0, "out": 0}
+            try:
+                raw = self._call(parts, usage)
+                out = Extraction.model_validate(raw).model_dump()
+                self._record(usage, t0, True)
+                return out
+            except RateLimited as e:
+                self._record(usage, t0, False, f"limit reached, trying the next model: {e}")
+                self.exhausted.add(model)
+                last = e
+                log.warning("AI model %s hit its limit (%s); trying the next backup model", model, str(e)[:120])
+            except Exception as e:
+                self._record(usage, t0, False, f"{type(e).__name__}: {e}")
+                raise
+        raise RuntimeError("Every model's limit is used up for now (" + ", ".join(self.models) + "). "
+                           "Free tiers reset daily; try again later or add a paid key." + (f" Last: {last}" if last else ""))
 
     def _record(self, usage, t0, ok, error=None):
         if self.recorder:
@@ -158,11 +186,11 @@ class ClaudeExtractor(_AIExtractor):
     provider = "anthropic"
 
     def __init__(self, api_key: str | None = None, model: str | None = None, max_tokens: int | None = None,
-                 recorder=None, extra_instructions: str | None = None):
+                 recorder=None, extra_instructions: str | None = None, fallback_models: list[str] | None = None):
         import anthropic
 
         s = get_settings()
-        super().__init__(model or s.extraction_model, max_tokens, recorder, extra_instructions)
+        super().__init__(model or s.extraction_model, max_tokens, recorder, extra_instructions, fallback_models)
         key = api_key or s.anthropic_api_key
         if not key:
             raise RuntimeError("No Anthropic API key. Add it in Settings → AI connector.")
@@ -183,6 +211,15 @@ class ClaudeExtractor(_AIExtractor):
         # The instructions and the (large) output schema are the same for every call, so they are marked for
         # prompt caching: the 2nd..nth part of a long document, and documents read within a few minutes of
         # each other, reuse them at a fraction of the input price.
+        import anthropic
+        try:
+            return self._stream(content, usage)
+        except (anthropic.RateLimitError, anthropic.InternalServerError) as e:
+            if isinstance(e, anthropic.RateLimitError) or _is_rate_limit(getattr(e, "status_code", 0) or 0, str(e)):
+                raise RateLimited(str(e)[:300]) from e
+            raise
+
+    def _stream(self, content, usage: dict) -> dict:
         with self.client.messages.stream(
             model=self.model_name,
             max_tokens=self.max_tokens,
@@ -231,14 +268,35 @@ def dereference(schema: dict) -> dict:
     return walk(schema)
 
 
+def simplify(schema: dict) -> dict:
+    """A plainer schema for providers with a stricter JSON-schema dialect (Gemini's function calling):
+    "anyOf [X, null]" becomes X with nullable: true, and defaults / titles are dropped. The answer is still
+    validated against the full schema afterwards."""
+    def walk(node):
+        if isinstance(node, list):
+            return [walk(x) for x in node]
+        if not isinstance(node, dict):
+            return node
+        node = {k: v for k, v in node.items() if k not in ("default", "title")}
+        opts = node.get("anyOf")
+        if opts and any(o.get("type") == "null" for o in opts):
+            rest = [o for o in opts if o.get("type") != "null"]
+            if len(rest) == 1:
+                merged = {**{k: v for k, v in node.items() if k != "anyOf"}, **rest[0], "nullable": True}
+                return walk(merged)
+        return {k: walk(v) for k, v in node.items()}
+    return walk(schema)
+
+
 class OpenAICompatExtractor(_AIExtractor):
     """OpenAI, Google Gemini, Groq, OpenRouter, Ollama... anything with an OpenAI-style /chat/completions."""
 
     def __init__(self, base_url: str, api_key: str, model: str, max_tokens: int | None = None, provider: str = "openai",
-                 recorder=None, transport=None, max_pdf_pages: int = 20, extra_instructions: str | None = None):
+                 recorder=None, transport=None, max_pdf_pages: int = 20, extra_instructions: str | None = None,
+                 fallback_models: list[str] | None = None):
         import httpx
 
-        super().__init__(model, max_tokens, recorder, extra_instructions)
+        super().__init__(model, max_tokens, recorder, extra_instructions, fallback_models)
         if not base_url or not model:
             raise RuntimeError("Set the base URL and model in Settings → AI connector")
         self.provider = provider
@@ -264,6 +322,8 @@ class OpenAICompatExtractor(_AIExtractor):
             body = {**body, "max_completion_tokens": body.pop("max_tokens")}      # newer OpenAI models
             r = self.http.post(f"{self.base_url}/chat/completions", json=body)
         if r.status_code >= 400:
+            if _is_rate_limit(r.status_code, r.text):
+                raise RateLimited(f"{self.provider} {r.status_code}: {r.text[:200]}")
             raise RuntimeError(f"{self.provider} API error {r.status_code}: {r.text[:300]}")
         return r.json()
 
@@ -281,7 +341,8 @@ class OpenAICompatExtractor(_AIExtractor):
                 "messages": [{"role": "system", "content": self.system_prompt}, {"role": "user", "content": content}],
                 "tools": [{"type": "function", "function": {
                     "name": TOOL_NAME, "description": "Record every rate, package, activity, place and term in the document.",
-                    "parameters": dereference(tool_schema())}}],
+                    "parameters": simplify(dereference(tool_schema())) if self.provider == "gemini"
+                                  else dereference(tool_schema())}}],
                 "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}}}
         data = self._post(body)
         u = data.get("usage") or {}

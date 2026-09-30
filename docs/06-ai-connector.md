@@ -54,6 +54,28 @@ For non-Claude providers, scanned PDFs are sent as page images, up to *Scanned P
 
 ---
 
+## Free testing with Google Gemini
+
+For an internal trial without paying:
+
+1. Go to **aistudio.google.com**, sign in with a Google account, and press **Get API key → Create API key**. No card is needed for the free tier.
+2. Settings → AI connector → **AI provider: Google Gemini**. The model (`gemini-3.8-flash`) and the **Backup models** (`gemini-3.7-flash, gemini-3.6-flash, gemini-3.5-flash, gemini-3.5-flash-lite`) are filled in for you.
+3. Paste the key, **Save**, **Test connection**.
+4. Leave the prices empty (it's free) and upload a sheet.
+
+**Backup models:**
+- Free limits are counted **per model**, so when one model's limit is used up (Google answers *429 / RESOURCE_EXHAUSTED*) or it's busy (*503*), the same document goes to the next backup model.
+- A model that ran out is skipped for the rest of that document.
+- Each attempt is listed under *Recent AI calls*: *limit reached* for the refusal, and the model that did the work.
+- A real error, such as a wrong key, is not retried.
+- If every model is used up, the document is marked *failed* with *"Every model's limit is used up for now"*. Press **Try again** later; daily limits reset at midnight Pacific time (13:30 IST).
+
+Your current limits are in AI Studio → *Rate limit*. They're per Google Cloud project, not per key, so extra keys in the same project don't add quota. Don't create extra projects or accounts to get around the limits: that breaks Google's terms.
+
+**Privacy on the free tier:** Google says content sent on the free tier is used to improve its products; the paid tier doesn't do that. Test with old or sample sheets, or sheets without confidentiality clauses. Use Claude, or Gemini's paid tier, for real supplier rates.
+
+Gemini gets a slightly simpler version of the answer schema, because its function calling accepts a narrower JSON-schema dialect. The answer is still checked against the full schema.
+
 ## Switching provider (e.g. from Claude to another AI)
 
 1. Settings → AI connector → **AI provider**: choose the new one. The key badge and "Get a key" link switch to that provider.

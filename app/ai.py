@@ -30,7 +30,13 @@ PROVIDERS = {
                "keys_url": "https://platform.openai.com/api-keys"},
     "gemini": {"label": "Google Gemini", "kind": "openai",
                "base_url": "https://generativelanguage.googleapis.com/v1beta/openai", "env": "GEMINI_API_KEY",
-               "default_model": "", "models": [], "note": "Through Google's OpenAI-compatible endpoint.",
+               "default_model": "gemini-3.8-flash",
+               "models": ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash",
+                          "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"],
+               "default_fallbacks": ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"],
+               "note": "Through Google's OpenAI-compatible endpoint. Free tier: limits are per model, so backup "
+                       "models take over when one is used up. On the free tier Google may use what you send to "
+                       "improve its products.",
                "keys_url": "https://aistudio.google.com/apikey"},
     "groq": {"label": "Groq", "kind": "openai", "base_url": "https://api.groq.com/openai/v1", "env": "GROQ_API_KEY",
              "default_model": "", "models": [], "note": "Fast and cheap; check the model supports tool calls.",
@@ -45,7 +51,8 @@ PROVIDERS = {
 
 DEFAULTS = {"provider": "anthropic", "model": "", "base_url": "", "api_key_enc": None, "max_tokens": None,
             "price_input_per_mtok": None, "price_output_per_mtok": None, "price_currency": "USD",
-            "monthly_budget": None, "enabled": True, "extra_instructions": "", "max_pdf_pages": 20}
+            "monthly_budget": None, "enabled": True, "extra_instructions": "", "max_pdf_pages": 20,
+            "fallback_models": []}      # tried in order when the main model hits a rate limit or is overloaded
 
 
 class AIError(Exception):
@@ -90,6 +97,7 @@ def public_view(s: Session) -> dict:
             "key_env_var": PROVIDERS[cfg["provider"]]["env"], "can_save_keys": secretbox.available(),
             "demo_mode": bool(get_settings().fixtures_dir),
             "providers": [{"id": k, **{x: v[x] for x in ("label", "kind", "base_url", "env", "default_model", "models", "note", "keys_url")},
+                           "default_fallbacks": v.get("default_fallbacks", []),
                            "env_key_set": bool(os.environ.get(v["env"]) or getattr(get_settings(), v["env"].lower(), None))}
                           for k, v in PROVIDERS.items()]}
 
@@ -107,6 +115,10 @@ def save(s: Session, data: dict) -> dict:
             cfg[k] = (data[k] or "").strip()
     if len(cfg.get("extra_instructions") or "") > 4000:
         raise AIError("Keep the extra instructions under 4,000 characters")
+    if "fallback_models" in data:
+        raw = data["fallback_models"]
+        items = raw.split(",") if isinstance(raw, str) else (raw or [])
+        cfg["fallback_models"] = list(dict.fromkeys(m.strip() for m in items if m and m.strip()))[:6]
     if "max_pdf_pages" in data and data["max_pdf_pages"] not in (None, ""):
         cfg["max_pdf_pages"] = max(1, min(100, int(data["max_pdf_pages"])))
     for k in ("max_tokens", "price_input_per_mtok", "price_output_per_mtok", "monthly_budget"):
@@ -260,12 +272,13 @@ def build_extractor(s: Session, purpose: str = "extraction", document_id: int | 
     r = resolved(cfg)
     rec = recorder(s, cfg, purpose, document_id)
     extra = cfg.get("extra_instructions") or None
+    backups = [m for m in (cfg.get("fallback_models") or []) if m != r["model"]]
     if r["kind"] == "anthropic":
         return ClaudeExtractor(api_key=key, model=r["model"], max_tokens=r["max_tokens"], recorder=rec,
-                               extra_instructions=extra)
+                               extra_instructions=extra, fallback_models=backups)
     return OpenAICompatExtractor(base_url=r["base_url"], api_key=key, model=r["model"], max_tokens=r["max_tokens"],
                                  provider=cfg["provider"], recorder=rec, extra_instructions=extra,
-                                 max_pdf_pages=int(cfg.get("max_pdf_pages") or 20))
+                                 max_pdf_pages=int(cfg.get("max_pdf_pages") or 20), fallback_models=backups)
 
 
 def test_connection(s: Session) -> dict:
