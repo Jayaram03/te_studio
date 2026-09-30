@@ -1,0 +1,22 @@
+# Runtime dependencies (what the server needs). Install: pip install -r requirements.txt
+fastapi>=0.115          # web framework (API + serves the web app)
+uvicorn>=0.30           # web server that runs FastAPI
+python-multipart>=0.0.9 # file uploads
+sqlalchemy>=2.0         # database access
+psycopg[binary]>=3.1    # PostgreSQL driver (Supabase, Neon, local Postgres)
+alembic>=1.13           # database migrations (run automatically on start)
+pydantic>=2.7
+pydantic-settings>=2.3  # reads settings from environment variables / .env
+cryptography>=42        # encrypts AI API keys saved from Settings
+anthropic>=0.40         # Claude API (default AI)
+httpx>=0.27             # other AI providers (OpenAI-compatible APIs)
+pdfplumber>=0.11        # reads PDF text and tables
+pypdfium2>=4.20         # renders scanned PDF pages as images for non-Claude AIs
+openpyxl>=3.1           # reads/writes Excel
+xlrd>=2.0               # reads old Excel .xls files
+python-docx>=1.1        # reads Word .docx files
+defusedxml>=0.7         # reads XML safely (blocks entity-expansion attacks)
+charset-normalizer>=3.3 # detects the text encoding of CSV / text exports
+python-dateutil>=2.9    # date parsing
+rapidfuzz>=3.9          # matches hotel / supplier names
+reportlab>=4.0          # branded PDF quotes and rate cards

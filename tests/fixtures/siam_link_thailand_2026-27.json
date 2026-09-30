@@ -1,0 +1,319 @@
+{
+  "document_type": "dmc_rate_sheet",
+  "supplier": {
+    "name": "Siam Link DMC",
+    "type": "dmc",
+    "country": "Thailand"
+  },
+  "currency": "THB",
+  "taxes": "included",
+  "rate_type": "net",
+  "seasons": [
+    {
+      "key": "green",
+      "name": "Green Season",
+      "periods": [
+        {
+          "start": "01 Nov 2026",
+          "end": "19 Dec 2026"
+        }
+      ]
+    },
+    {
+      "key": "high",
+      "name": "High Season",
+      "periods": [
+        {
+          "start": "20 Dec 2026",
+          "end": "15 Jan 2027"
+        }
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Patong Beach Hotel",
+      "city": "Phuket",
+      "destination": "Thailand",
+      "rates": [
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 2200,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 2600,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 2200,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 2600,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 900,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3400,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3900,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3400,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3900,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Superior",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 900,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3100,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3500,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3100,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3500,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 900,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 4600,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 5200,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 4600,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 5200,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe Pool Access",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 900,
+          "season_key": "high"
+        }
+      ]
+    },
+    {
+      "name": "Riverside Grand",
+      "city": "Bangkok",
+      "destination": "Thailand",
+      "rates": [
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 2800,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3200,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 2800,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3200,
+          "season_key": "green",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 1100,
+          "season_key": "green"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 3900,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Single",
+          "amount": 4300,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 3900,
+          "season_key": "high"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Double",
+          "amount": 4300,
+          "season_key": "high",
+          "days": "Weekend (Fri-Sat)"
+        },
+        {
+          "room_type": "Deluxe",
+          "meal_plan": "incl. breakfast",
+          "occupancy": "Extra bed",
+          "amount": 1100,
+          "season_key": "high"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "kind": "transfer",
+      "name": "Phuket Airport - Patong hotel",
+      "destination": "Phuket",
+      "vehicle_type": "Private van (up to 9)",
+      "basis": "per_vehicle",
+      "amount": 1200,
+      "valid_from": "01 Nov 2026",
+      "valid_to": "31 Oct 2027"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Phi Phi Island by speedboat with lunch",
+      "destination": "Phuket",
+      "vehicle_type": "SIC",
+      "basis": "per_adult",
+      "amount": 1900,
+      "valid_from": "01 Nov 2026",
+      "valid_to": "31 Oct 2027"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Phi Phi Island by speedboat with lunch",
+      "destination": "Phuket",
+      "vehicle_type": "SIC",
+      "basis": "per_child",
+      "amount": 1400,
+      "valid_from": "01 Nov 2026",
+      "valid_to": "31 Oct 2027"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Bangkok city & temple tour",
+      "destination": "Bangkok",
+      "vehicle_type": "SIC",
+      "basis": "per_person",
+      "amount": 1100,
+      "valid_from": "01 Nov 2026",
+      "valid_to": "31 Oct 2027"
+    }
+  ],
+  "general_terms": [
+    "Child below 4 free sharing bed."
+  ],
+  "warnings": [
+    "Transfer and tour sheet validity: 01 Nov 2026 - 31 Oct 2027; hotel rates only cover the two seasons."
+  ]
+}

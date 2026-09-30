@@ -1,0 +1,396 @@
+{
+  "document_type": "mixed",
+  "supplier": {
+    "name": "Green Valley Holidays",
+    "type": "dmc",
+    "city": "Kochi",
+    "country": "India",
+    "email": "sales@greenvalley.example",
+    "phone": "+91 484 0000000"
+  },
+  "currency": "INR",
+  "validity": {
+    "start": "01-Oct-2026",
+    "end": "31-Mar-2027"
+  },
+  "taxes": "excluded",
+  "rate_type": "net",
+  "seasons": [
+    {
+      "key": "pkg",
+      "name": "Package validity (excl. peak)",
+      "periods": [
+        {
+          "start": "2026-10-01",
+          "end": "2026-12-19"
+        },
+        {
+          "start": "2027-01-06",
+          "end": "2027-03-31"
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "title": "Kerala Classic 4N/5D",
+      "destinations": [
+        "Munnar",
+        "Alleppey",
+        "Kochi"
+      ],
+      "nights": 4,
+      "days": 5,
+      "valid_from": "01-Oct-2026",
+      "valid_to": "31-Mar-2027",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Cochin – Munnar",
+          "description": "Airport pick up, drive to Munnar (4 hrs) via Cheeyappara waterfalls.",
+          "overnight": "Munnar"
+        },
+        {
+          "day": 2,
+          "title": "Munnar sightseeing",
+          "description": "Eravikulam National Park, tea museum, Mattupetty dam, Echo point.",
+          "overnight": "Munnar"
+        },
+        {
+          "day": 3,
+          "title": "Munnar – Alleppey",
+          "description": "Drive to Alleppey, board private houseboat, backwater cruise.",
+          "overnight": "Alleppey houseboat",
+          "meals": "B/L/D"
+        },
+        {
+          "day": 4,
+          "title": "Alleppey – Kochi",
+          "description": "Disembark, Fort Kochi, Chinese fishing nets, Jew Town.",
+          "overnight": "Kochi"
+        },
+        {
+          "day": 5,
+          "title": "Departure",
+          "description": "Drop at Cochin airport."
+        }
+      ],
+      "hotels": [
+        {
+          "city": "Munnar",
+          "hotel_name": "Tea Valley Resort",
+          "category": "Standard",
+          "nights": 2,
+          "meal_plan": "MAP"
+        },
+        {
+          "city": "Munnar",
+          "hotel_name": "Misty Hills Resort & Spa",
+          "category": "Deluxe",
+          "nights": 2,
+          "meal_plan": "MAP"
+        },
+        {
+          "city": "Alleppey",
+          "hotel_name": "Deluxe Houseboat",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "AP"
+        },
+        {
+          "city": "Alleppey",
+          "hotel_name": "Premium Houseboat",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "AP"
+        },
+        {
+          "city": "Kochi",
+          "hotel_name": "Harbour Inn",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "CP"
+        },
+        {
+          "city": "Kochi",
+          "hotel_name": "Grand Bay Hotel",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "CP"
+        }
+      ],
+      "prices": [
+        {
+          "category": "Standard",
+          "pax_min": 2,
+          "pax_max": 3,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 18500,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 2,
+          "pax_max": 3,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 24900,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Standard",
+          "pax_min": 4,
+          "pax_max": 5,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 15200,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 4,
+          "pax_max": 5,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 21600,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Standard",
+          "pax_min": 6,
+          "pax_max": null,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 13900,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 6,
+          "pax_max": null,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 20100,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Standard",
+          "occupancy": "Single supplement",
+          "basis": "per_person",
+          "amount": 7500,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "occupancy": "Single supplement",
+          "basis": "per_person",
+          "amount": 11000,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Standard",
+          "occupancy": "Child with bed (6-11)",
+          "basis": "per_person",
+          "amount": 9800,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "occupancy": "Child with bed (6-11)",
+          "basis": "per_person",
+          "amount": 12500,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Standard",
+          "occupancy": "Child without bed (6-11)",
+          "basis": "per_person",
+          "amount": 6200,
+          "season_key": "pkg",
+          "rate_type": "net"
+        },
+        {
+          "category": "Deluxe",
+          "occupancy": "Child without bed (6-11)",
+          "basis": "per_person",
+          "amount": 7900,
+          "season_key": "pkg",
+          "rate_type": "net"
+        }
+      ],
+      "inclusions": [
+        "Accommodation on CP (MAP in Munnar)",
+        "All meals on houseboat",
+        "All transfers and sightseeing by private AC vehicle",
+        "Driver allowance, toll and parking"
+      ],
+      "exclusions": [
+        "Airfare",
+        "GST 5%",
+        "Entry tickets",
+        "Anything not mentioned in inclusions"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "kind": "transfer",
+      "name": "Cochin Airport – Munnar",
+      "destination": "Kerala",
+      "vehicle_type": "Sedan (Dzire)",
+      "basis": "per_vehicle",
+      "amount": 3800,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Cochin Airport – Munnar",
+      "destination": "Kerala",
+      "vehicle_type": "Innova Crysta",
+      "basis": "per_vehicle",
+      "amount": 5200,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Cochin Airport – Munnar",
+      "destination": "Kerala",
+      "vehicle_type": "Tempo Traveller 12 seater",
+      "basis": "per_vehicle",
+      "amount": 7500,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Munnar local sightseeing (full day)",
+      "destination": "Kerala",
+      "vehicle_type": "Sedan (Dzire)",
+      "basis": "per_vehicle",
+      "amount": 2800,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Munnar local sightseeing (full day)",
+      "destination": "Kerala",
+      "vehicle_type": "Innova Crysta",
+      "basis": "per_vehicle",
+      "amount": 3600,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "sightseeing",
+      "name": "Munnar local sightseeing (full day)",
+      "destination": "Kerala",
+      "vehicle_type": "Tempo Traveller 12 seater",
+      "basis": "per_vehicle",
+      "amount": 5000,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Munnar – Alleppey",
+      "destination": "Kerala",
+      "vehicle_type": "Sedan (Dzire)",
+      "basis": "per_vehicle",
+      "amount": 4200,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Munnar – Alleppey",
+      "destination": "Kerala",
+      "vehicle_type": "Innova Crysta",
+      "basis": "per_vehicle",
+      "amount": 5800,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Munnar – Alleppey",
+      "destination": "Kerala",
+      "vehicle_type": "Tempo Traveller 12 seater",
+      "basis": "per_vehicle",
+      "amount": 8200,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Alleppey – Cochin Airport",
+      "destination": "Kerala",
+      "vehicle_type": "Sedan (Dzire)",
+      "basis": "per_vehicle",
+      "amount": 2500,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Alleppey – Cochin Airport",
+      "destination": "Kerala",
+      "vehicle_type": "Innova Crysta",
+      "basis": "per_vehicle",
+      "amount": 3300,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    },
+    {
+      "kind": "transfer",
+      "name": "Alleppey – Cochin Airport",
+      "destination": "Kerala",
+      "vehicle_type": "Tempo Traveller 12 seater",
+      "basis": "per_vehicle",
+      "amount": 4800,
+      "currency": "INR",
+      "valid_from": "01.10.2026",
+      "valid_to": "31.03.2027",
+      "rate_type": "net"
+    }
+  ],
+  "warnings": [
+    "Vehicle rates: add 20% for 20 Dec – 05 Jan (not recorded as separate rates).",
+    "Package not valid 20 Dec – 05 Jan."
+  ]
+}

@@ -1,0 +1,1647 @@
+{
+  "document_type": "package",
+  "supplier": {
+    "name": "Abdaal Travels",
+    "type": "dmc",
+    "city": "Srinagar",
+    "country": "India",
+    "contact_person": "Fayaz Ahmad (Managing Director)",
+    "email": "abdaaltravels44@gmail.com, operations.abdaaltravels@gmail.com, operations2.abdaaltravels@gmail.com",
+    "phone": "0194-3573829, +91 7298624934, +91 7889387991, +91 8899885413, +91 9103003422, 9906738898",
+    "address": "2nd Floor, Ibrahim Shopping Complex, Rainawari, Srinagar, Jammu and Kashmir 190003",
+    "website": "abdaaltravels.wordpress.com",
+    "gst_number": "01AEXPF9830N1ZY"
+  },
+  "currency": "INR",
+  "validity": {
+    "start": "Aug 2026",
+    "end": "Oct 2026"
+  },
+  "taxes": "unknown",
+  "rate_type": "unknown",
+  "packages": [
+    {
+      "title": "Kashmir Off Season 5N/6D",
+      "region": "Kashmir",
+      "destinations": [
+        "Srinagar",
+        "Gulmarg",
+        "Sonamarg",
+        "Pahalgam"
+      ],
+      "nights": 5,
+      "days": 6,
+      "valid_from": "Aug 2026",
+      "valid_to": "Oct 2026",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival Srinagar",
+          "overnight": "Srinagar",
+          "meals": "D",
+          "description": "Arrive at Srinagar airport, meet our representative and transfer to the hotel. Visit the Mughal gardens - Nishat Bagh and Shalimar Bagh on the banks of Dal Lake - Shankaracharya Temple and Hazratbal Shrine. Check in, dinner and overnight in Srinagar."
+        },
+        {
+          "day": 2,
+          "title": "Day excursion to Gulmarg",
+          "overnight": "Srinagar",
+          "meals": "B/D",
+          "description": "After breakfast drive to Gulmarg (60 km / 2 hrs), famous for ski slopes and one of the highest golf courses in the world. Optional Gondola ride to Kongdoori and Marry Shoulder at own cost. Return to Srinagar for the night."
+        },
+        {
+          "day": 3,
+          "title": "Day excursion to Sonamarg",
+          "overnight": "Srinagar",
+          "meals": "B/D",
+          "description": "After breakfast full-day excursion to Sonamarg, the 'meadow of gold' on the Sindh river. Optional pony ride to the glaciers at own cost. Return to Srinagar in the evening."
+        },
+        {
+          "day": 4,
+          "title": "Srinagar to Pahalgam",
+          "overnight": "Pahalgam",
+          "meals": "B/D",
+          "description": "After breakfast check out and drive to Pahalgam (90 km / 2 hrs), the Valley of Shepherds, visiting saffron fields, Awantipura ruins and a bat factory on the way. Optional Aru Valley, Betaab Valley and Chandanwari by union cab at own cost. Dinner and overnight in Pahalgam."
+        },
+        {
+          "day": 5,
+          "title": "Pahalgam to Srinagar houseboat",
+          "overnight": "Srinagar (houseboat)",
+          "meals": "B/D",
+          "description": "After breakfast drive back to Srinagar. Shikara ride on Dal Lake and time for shopping. Check in to the houseboat, dinner and overnight."
+        },
+        {
+          "day": 6,
+          "title": "Departure",
+          "meals": "B",
+          "description": "After breakfast transfer to Srinagar airport for departure."
+        }
+      ],
+      "hotels": [
+        {
+          "city": "Srinagar",
+          "hotel_name": "Grand Zamin",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Hasanz Enclave",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Alhamrah Retreat",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Karim Retreat",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "D Shamoon",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Holiday Villa",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Grand Alden",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Grand MS",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Sideeq Palace",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Golden Sands",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Mehtab Palace",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Royal Milad",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Shamas Residency",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Gurcoo Residency",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Shefaf",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Zaman",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Regal Palace",
+          "category": "Standard",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Adlife Luxury",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Firdous",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Brown Palace",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Hermitage",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Moonstone",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Karam Gold",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Asain Park",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Kareem Residency",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Royal Arabia",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Victory",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Golden Leaf",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Opera Inn",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Moonstone De Luxury",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Blossom",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Grand Fortune",
+          "category": "Deluxe",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Downtown",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Montreal",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Sapphire Luxury",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Grand Kaiser",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Blanco",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Ov Boutique",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "5 Falcon",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Royal Heritage",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Royal Batoo",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Brown Palace",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Paisley Palace",
+          "category": "Premium",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Eternity by Greenscape",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Central Park",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Enco Resorts",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Arco",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Solar Residency",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Palm Spring",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Country Side",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Batra",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Rose Petal",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Royal Comfort",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Regency",
+          "category": "Luxury",
+          "nights": 3,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Mala Resort",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Golf View",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Hills Heevan",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Pahalgam Guestline",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Chinar Palace",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Pahalgam Peaks",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Sun N Shades",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Diamond Star",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Ababeel Heights",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Ahmad Villa",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Shabnum Resort",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Sun N Snow",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Peace Villa",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Vergan Resort",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Ski Hill Resort",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Classic Inn Estate",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Himalyan Hill Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Wood Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Lidder Spring",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Grand Salween",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "A S Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Black Pearl",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "5th Season",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Vista",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Srichan Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Green Height",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Pahalgam Retreat",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Royale Comfort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Faiz Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Twin Top",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Idyll Resort",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Early Beck Resort",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Pahlagam Dayz",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Pahalgam Shore",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "River Side Cottage",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "White Water",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "White House",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Elegant Resort",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Bombay Palace",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Bombay Residency",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Volga",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Baisaran",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Vales Lodge",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Kudrat",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Harmukh Hills",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Hill Side Resorts",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Mount View",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Pahalgam",
+          "hotel_name": "Chinar Resorts",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "hotel"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Dawn",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nazneen",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nanga Parbat",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Azad Palace",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Golden Crown",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Morning Star",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Heevan",
+          "category": "Standard",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Dawn",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nazneen",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nanga Parbat",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Azad Palace",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Golden Crown",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Morning Star",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Heevan",
+          "category": "Deluxe",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Dawn",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nazneen",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Nanga Parbat",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Azad Palace",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Golden Crown",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Morning Star",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Heevan",
+          "category": "Premium",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Wanganoo Paradise",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        },
+        {
+          "city": "Srinagar",
+          "hotel_name": "Mahjong",
+          "category": "Luxury",
+          "nights": 1,
+          "meal_plan": "MAP",
+          "property_type": "houseboat"
+        }
+      ],
+      "prices": [
+        {
+          "category": "Standard",
+          "pax_min": 2,
+          "pax_max": 2,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 14800
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 2,
+          "pax_max": 2,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 17000
+        },
+        {
+          "category": "Premium",
+          "pax_min": 2,
+          "pax_max": 2,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 18500
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 2,
+          "pax_max": 2,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 23000
+        },
+        {
+          "category": "Standard",
+          "pax_min": 4,
+          "pax_max": 4,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 11800
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 4,
+          "pax_max": 4,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 14000
+        },
+        {
+          "category": "Premium",
+          "pax_min": 4,
+          "pax_max": 4,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 15300
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 4,
+          "pax_max": 4,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 19300
+        },
+        {
+          "category": "Standard",
+          "pax_min": 6,
+          "pax_max": 6,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 10400
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 6,
+          "pax_max": 6,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 12500
+        },
+        {
+          "category": "Premium",
+          "pax_min": 6,
+          "pax_max": 6,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 13700
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 6,
+          "pax_max": 6,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 17700
+        },
+        {
+          "category": "Standard",
+          "pax_min": 8,
+          "pax_max": 8,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 10400
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 8,
+          "pax_max": 8,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 12800
+        },
+        {
+          "category": "Premium",
+          "pax_min": 8,
+          "pax_max": 8,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 13800
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 8,
+          "pax_max": 8,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 17800
+        },
+        {
+          "category": "Standard",
+          "pax_min": 10,
+          "pax_max": 10,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 9800
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 10,
+          "pax_max": 10,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 12000
+        },
+        {
+          "category": "Premium",
+          "pax_min": 10,
+          "pax_max": 10,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 13100
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 10,
+          "pax_max": 10,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 17100
+        },
+        {
+          "category": "Standard",
+          "pax_min": 12,
+          "pax_max": 12,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 9500
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 12,
+          "pax_max": 12,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 11600
+        },
+        {
+          "category": "Premium",
+          "pax_min": 12,
+          "pax_max": 12,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 12800
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 12,
+          "pax_max": 12,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 16800
+        },
+        {
+          "category": "Standard",
+          "pax_min": 14,
+          "pax_max": 14,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 9200
+        },
+        {
+          "category": "Deluxe",
+          "pax_min": 14,
+          "pax_max": 14,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 11300
+        },
+        {
+          "category": "Premium",
+          "pax_min": 14,
+          "pax_max": 14,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 12500
+        },
+        {
+          "category": "Luxury",
+          "pax_min": 14,
+          "pax_max": 14,
+          "occupancy": "per person twin sharing",
+          "basis": "per_person",
+          "amount": 16500
+        },
+        {
+          "category": "Standard",
+          "occupancy": "Per Extra bed/ CWB",
+          "basis": "per_person",
+          "amount": 5000
+        },
+        {
+          "category": "Deluxe",
+          "occupancy": "Per Extra bed/ CWB",
+          "basis": "per_person",
+          "amount": 6500
+        },
+        {
+          "category": "Premium",
+          "occupancy": "Per Extra bed/ CWB",
+          "basis": "per_person",
+          "amount": 7500
+        },
+        {
+          "category": "Luxury",
+          "occupancy": "Per Extra bed/ CWB",
+          "basis": "per_person",
+          "amount": 8500
+        },
+        {
+          "category": "Standard",
+          "occupancy": "Per CNB",
+          "basis": "per_person",
+          "amount": 4000
+        },
+        {
+          "category": "Deluxe",
+          "occupancy": "Per CNB",
+          "basis": "per_person",
+          "amount": 5000
+        },
+        {
+          "category": "Premium",
+          "occupancy": "Per CNB",
+          "basis": "per_person",
+          "amount": 6500
+        },
+        {
+          "category": "Luxury",
+          "occupancy": "Per CNB",
+          "basis": "per_person",
+          "amount": 6500
+        }
+      ],
+      "inclusions": [
+        "Meet and greet on arrival",
+        "Transportation",
+        "Accommodation",
+        "Airport pick up and drop",
+        "Toll",
+        "Parking",
+        "Sightseeing",
+        "Transfers",
+        "Shikara ride at Dal Lake"
+      ],
+      "exclusions": [
+        "Gondola: 850 per person Phase 1, 1050 per person Phase 2",
+        "Pony rides: 1200-1500 per person per location",
+        "Jackets & snow shoes on rent: 200 per person",
+        "Special activities at Gulmarg: 1500-2500",
+        "Transit cab for Gulmarg: 2500 per cab for 6 pax (heavy snow / bad weather)",
+        "Local sightseeing of Gulmarg: 3500-5000 (negotiable)",
+        "Transit cab for Aru Valley, Betaab Valley & Chandanwari: 2500 per cab for 6 pax",
+        "Transit cabs for Zero Point, Sonamarg: 4500-7500 per cab for 6 pax (negotiable)",
+        "Entry tickets: 24 per person per Mughal garden",
+        "Personal expenses",
+        "Lunch",
+        "Airfare"
+      ],
+      "terms": [
+        "Hotels are 'or similar' options per category"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "activity",
+      "name": "Gulmarg Gondola ride - Phase 1",
+      "basis": "per_person",
+      "amount": 850
+    },
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "activity",
+      "name": "Gulmarg Gondola ride - Phase 2",
+      "basis": "per_person",
+      "amount": 1050
+    },
+    {
+      "destination": "Kashmir",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "activity",
+      "name": "Pony ride",
+      "basis": "per_person",
+      "amount": 1200,
+      "amount_max": 1500,
+      "notes": "Per location"
+    },
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "rental",
+      "name": "Jackets & snow shoes on rent",
+      "basis": "per_person",
+      "amount": 200
+    },
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "activity",
+      "name": "Special activities at Gulmarg",
+      "basis": "unknown",
+      "amount": 1500,
+      "amount_max": 2500,
+      "notes": "Depends on activity and distance travelled"
+    },
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "transfer",
+      "name": "Transit cab for Gulmarg",
+      "basis": "per_vehicle",
+      "pax_max": 6,
+      "amount": 2500,
+      "notes": "Required in case of heavy snow or bad weather"
+    },
+    {
+      "destination": "Gulmarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "sightseeing",
+      "name": "Local sightseeing of Gulmarg (Maharaja Palace, Botapatri)",
+      "basis": "per_vehicle",
+      "amount": 3500,
+      "amount_max": 5000,
+      "notes": "Negotiable"
+    },
+    {
+      "destination": "Pahalgam",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "transfer",
+      "name": "Transit cab for Aru Valley, Betaab Valley & Chandanwari",
+      "basis": "per_vehicle",
+      "pax_max": 6,
+      "amount": 2500
+    },
+    {
+      "destination": "Sonamarg",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "transfer",
+      "name": "Transit cab for Zero Point, Sonamarg",
+      "basis": "per_vehicle",
+      "pax_max": 6,
+      "amount": 4500,
+      "amount_max": 7500,
+      "notes": "Negotiable"
+    },
+    {
+      "destination": "Srinagar",
+      "optional": true,
+      "rate_type": "unknown",
+      "kind": "entry_ticket",
+      "name": "Mughal Garden entry ticket",
+      "basis": "per_person",
+      "amount": 24,
+      "notes": "Per garden"
+    }
+  ],
+  "places": [
+    {
+      "name": "Gurez Valley",
+      "destination": "Kashmir",
+      "region": "Bandipora",
+      "kind": "valley",
+      "description": "Remote Himalayan valley with meadows, rivers, Gurez Fort ruins and traditional villages.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Sinthan Top",
+      "destination": "Kashmir",
+      "region": "Anantnag",
+      "kind": "viewpoint",
+      "description": "High pass at about 3,800 m with wide mountain and valley views.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Kokernag",
+      "destination": "Kashmir",
+      "region": "Anantnag",
+      "kind": "garden",
+      "description": "Town known for natural springs and gardens at the foot of the Pir Panjal.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Verinag",
+      "destination": "Kashmir",
+      "region": "Anantnag",
+      "kind": "garden",
+      "description": "Spring that is the source of the Jhelum, with a Mughal-era garden.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Aharbal",
+      "destination": "Kashmir",
+      "region": "Kulgam",
+      "kind": "offbeat",
+      "description": "Large waterfall surrounded by forest walks.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Warwan Valley",
+      "destination": "Kashmir",
+      "region": "Kishtwar",
+      "kind": "valley",
+      "description": "Remote trekking valley with traditional villages.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Lolab Valley",
+      "destination": "Kashmir",
+      "region": "Kupwara",
+      "kind": "valley",
+      "description": "Green valley with forests, streams and old monuments.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Bungas Valley",
+      "destination": "Kashmir",
+      "region": "Kupwara",
+      "kind": "valley",
+      "description": "High meadows with trekking trails and panoramic views.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Daksum",
+      "destination": "Kashmir",
+      "region": "Anantnag",
+      "kind": "offbeat",
+      "description": "Forest village popular with trekkers.",
+      "availability": "15 Apr - 15 Oct (on request only)"
+    },
+    {
+      "name": "Nishat Bagh",
+      "destination": "Kashmir",
+      "region": "Srinagar",
+      "kind": "garden",
+      "description": "Terraced Mughal garden on the banks of Dal Lake."
+    },
+    {
+      "name": "Shalimar Bagh",
+      "destination": "Kashmir",
+      "region": "Srinagar",
+      "kind": "garden",
+      "description": "Mughal garden with fountains and water channels on Dal Lake."
+    },
+    {
+      "name": "Shankaracharya Temple",
+      "destination": "Kashmir",
+      "region": "Srinagar",
+      "kind": "religious",
+      "description": "Hilltop temple overlooking Srinagar."
+    },
+    {
+      "name": "Hazratbal Shrine",
+      "destination": "Kashmir",
+      "region": "Srinagar",
+      "kind": "religious",
+      "description": "Shrine on the shore of Dal Lake."
+    },
+    {
+      "name": "Dal Lake",
+      "destination": "Kashmir",
+      "region": "Srinagar",
+      "kind": "lake",
+      "description": "Lake known for shikara rides and houseboats."
+    },
+    {
+      "name": "Gulmarg",
+      "destination": "Kashmir",
+      "region": "Baramulla",
+      "kind": "attraction",
+      "description": "Ski resort and meadow with gondola and golf course, about 2 hrs from Srinagar."
+    },
+    {
+      "name": "Sonamarg",
+      "destination": "Kashmir",
+      "region": "Ganderbal",
+      "kind": "valley",
+      "description": "Meadow on the Sindh river with pony rides to the glaciers."
+    },
+    {
+      "name": "Betaab Valley",
+      "destination": "Kashmir",
+      "region": "Pahalgam",
+      "kind": "valley",
+      "description": "Valley near Pahalgam reached by union cab."
+    },
+    {
+      "name": "Aru Valley",
+      "destination": "Kashmir",
+      "region": "Pahalgam",
+      "kind": "valley",
+      "description": "Meadow village near Pahalgam reached by union cab."
+    },
+    {
+      "name": "Chandanwari",
+      "destination": "Kashmir",
+      "region": "Pahalgam",
+      "kind": "attraction",
+      "description": "Snow point near Pahalgam reached by union cab."
+    }
+  ],
+  "general_terms": [
+    "Check-in / check-out at all properties 12:00 noon.",
+    "MAP (breakfast & dinner): fixed menu / buffet, no choice of menu.",
+    "Prices may change with hotel tariff revisions, transport / fuel cost hikes or new J&K government taxes.",
+    "Cancellation: no charge 21+ days before check-in; 50% between 21 and 15 days; 100% within 15 days.",
+    "Offbeat places accessible 15 April - 15 October only, costed on request."
+  ],
+  "warnings": [
+    "Currency not stated - INR assumed.",
+    "Rates not labelled net/B2B or public.",
+    "'Group of Houseboats' is listed as an option but is not a specific property - not recorded.",
+    "Pahalgam Standard list: 'Hills Heevan / Pahalgam / Guestline' read as 'Hills Heevan' and 'Pahalgam Guestline' - check."
+  ]
+}

@@ -1,0 +1,28 @@
+# Run the Studio with its own PostgreSQL on any server or laptop that has Docker.
+#   docker compose up --build        -> app on http://localhost:8000
+#   docker compose up -d db          -> only the database (for running the app with `uvicorn` yourself)
+# Settings come from .env (copy .env.example). DATABASE_URL below overrides the one in .env.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: rates
+      POSTGRES_PASSWORD: rates          # change for anything beyond your own laptop
+      POSTGRES_DB: rates
+    volumes: [pgdata:/var/lib/postgresql/data]
+    ports: ["127.0.0.1:5432:5432"]      # reachable from this machine only, never from the network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rates"]
+      interval: 5s
+      retries: 10
+  app:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://rates:rates@db:5432/rates
+      PROCESS_MODE: background          # a normal server can read documents in the background
+    ports: ["8000:8000"]
+    depends_on:
+      db: {condition: service_healthy}
+volumes:
+  pgdata:

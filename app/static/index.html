@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Episodes · Studio</title>
+<link rel="icon" href="/static/brand/favicon.png">
+<style>
+  @font-face { font-family: Poppins; src: url(/static/fonts/Poppins-Light.ttf); font-weight: 300; font-display: swap }
+  @font-face { font-family: Poppins; src: url(/static/fonts/Poppins-Regular.ttf); font-weight: 400; font-display: swap }
+  @font-face { font-family: Poppins; src: url(/static/fonts/Poppins-Medium.ttf); font-weight: 500; font-display: swap }
+  @font-face { font-family: Poppins; src: url(/static/fonts/Poppins-Bold.ttf); font-weight: 600 700; font-display: swap }
+
+  /* Travel Episodes design system tokens */
+  :root {
+    --lavender:#8286cb; --orange:#ef712c; --cream:#fae7b6; --rust:#b54a21; --sun:#f39d6f; --sand:#e4bdae;
+    --lav-soft:#a5a4d4; --mist:#e2e3f3; --charcoal:#4f4c4d; --graphite:#5f6062;
+    --surface:#ffffff; --page:#f6f6fb; --ink:#4f4c4d; --ink-muted:#5f6062; --line:#e6e6f2; --field:#ffffff;
+    --field-line:#c9c9dc; --hover:#f1f1f9; --btn:#4f4c4d; --btn-ink:#ffffff;
+    --err:#b42318; --err-bg:#fdecea; --warn:#8a5a00; --warn-bg:#fff4dc; --ok:#1a7f37; --ok-bg:#e6f4ea;
+    --r-card:24px; --r-sm:10px;
+  }
+  @media (prefers-color-scheme: dark) { :root {
+    --surface:#4f4c4d; --page:#3f3d3e; --ink:#ffffff; --ink-muted:#d3d2d2; --line:#615e5f; --field:#454243;
+    --field-line:#77747a; --hover:#5a5758; --mist:#5b5a72; --btn:#ffffff; --btn-ink:#4f4c4d;
+    --err:#ff8a80; --err-bg:#5a2e2b; --warn:#ffcc66; --warn-bg:#5a4a2b; --ok:#7ee2a0; --ok-bg:#2d4a37; } }
+
+  * { box-sizing: border-box }
+  html, body { margin: 0 }
+  body { font: 14px/1.55 Poppins, system-ui, sans-serif; background: var(--page); color: var(--ink) }
+  a { color: inherit }
+
+  /* shell */
+  .app { display: grid; grid-template-columns: 236px minmax(0, 1fr); min-height: 100vh }
+  aside.side { background: var(--surface); border-right: 1px solid var(--line); padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 4px }
+  .brand { padding: 0 8px 18px; }
+  .brand img { width: 170px; display: block; background: #fff; border-radius: 14px; padding: 6px 8px }
+  .brand small { display: block; margin-top: 8px; font-size: 11px; font-weight: 300; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-muted) }
+  .nav button { all: unset; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 9999px; cursor: pointer; color: var(--ink-muted); font-weight: 500; width: 100%; box-sizing: border-box }
+  .nav button svg { width: 19px; height: 19px; flex: none }
+  .nav button:hover { background: var(--hover); color: var(--ink) }
+  .nav button.on { background: var(--mist); color: var(--ink) }
+  .nav button.on svg { color: var(--lavender) }
+  .nav .count { margin-left: auto; background: var(--orange); color: #fff; font-size: 11px; font-weight: 700; border-radius: 9999px; padding: 0 7px; line-height: 18px }
+  .side .foot { margin-top: auto; font-size: 12px; color: var(--ink-muted); padding: 10px 14px; overflow-wrap: anywhere }
+  main { padding: 28px 32px 80px; max-width: 1320px; width: 100%; }
+  .pagehead { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px }
+  .pagehead h1 { font-size: 28px; line-height: 1.2; margin: 0; font-weight: 600 }
+  .pagehead p { margin: 2px 0 0; color: var(--ink-muted) }
+
+  /* cards */
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); padding: 22px 24px; margin-bottom: 18px; position: relative }
+  .card > h2 select, .card > h2 input { font-size: 13px; font-weight: 400; padding: 5px 9px }
+  .card > h2, .card .h2 { font-size: 17px; font-weight: 600; margin: 0 0 14px; display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap }
+  h3 { font-size: 14px; font-weight: 600; margin: 18px 0 8px }
+  .grid { display: grid; gap: 18px } .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)) } .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+  .g-main { grid-template-columns: minmax(0, 1fr) 340px; align-items: start }
+  .hero { background: var(--lavender); border: 0; color: #fff; overflow: hidden; padding: 26px 30px }
+  .hero h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; font-weight: 700 }
+  .hero p { margin: 0; font-size: 19px; font-weight: 600; opacity: 1 }
+  .hero .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap }
+  .hero .btn { background: #fff; color: var(--charcoal); border-color: #fff }
+  .dots { position: absolute; right: 26px; top: 22px; display: grid; grid-template-columns: repeat(9, 6px); gap: 9px 11px; pointer-events: none }
+  .dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--lav-soft) }
+  .dots i:nth-child(n+10):nth-child(-n+18), .dots i:nth-child(n+28) { background: var(--orange) }
+  .hero .dots i { background: var(--lav-soft) } .hero .dots i:nth-child(n+10):nth-child(-n+18), .hero .dots i:nth-child(n+28) { background: var(--cream) }
+
+  /* KPI tiles */
+  .kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; margin-bottom: 18px }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px }
+  .kpi small { display: block; font-size: 11px; font-weight: 300; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-muted) }
+  .kpi b { display: block; font-size: 26px; line-height: 1.25; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums }
+  .kpi b.accent { color: var(--orange) }
+  .kpi span { font-size: 12px; color: var(--ink-muted) }
+
+  /* forms & buttons */
+  label { display: inline-flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--ink-muted); margin: 0 10px 12px 0; font-weight: 500 }
+  label.check { flex-direction: row; align-items: center; gap: 7px; color: var(--ink); font-size: 13px; font-weight: 400 }
+  input, select, textarea { font: inherit; color: var(--ink); background: var(--field); border: 1px solid var(--field-line); border-radius: var(--r-sm); padding: 8px 11px; min-width: 0 }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--lavender); outline-offset: 0; border-color: var(--lavender) }
+  textarea { width: 100%; min-height: 76px; resize: vertical }
+  textarea.json { min-height: 320px; font-family: ui-monospace, monospace; font-size: 12px }
+  input.num { width: 104px } input.small { width: 72px } .w100 { width: 100% }
+  .btn { font: inherit; font-weight: 500; border: 1.5px solid var(--field-line); background: var(--surface); color: var(--ink); padding: 8px 16px; border-radius: 9999px; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; text-decoration: none }
+  .btn:hover { border-color: var(--lavender) }
+  .btn.primary { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); font-weight: 600 }
+  .btn.primary:hover { opacity: .9 }
+  .btn.sm { padding: 5px 11px; font-size: 13px }
+  .btn svg { width: 16px; height: 16px }
+  .link { all: unset; color: var(--lavender); cursor: pointer; font-weight: 500; text-decoration: underline; text-underline-offset: 3px }
+  .icon { all: unset; cursor: pointer; color: var(--ink-muted); padding: 3px 7px; border-radius: 8px; line-height: 1 }
+  .icon:hover { background: var(--hover); color: var(--ink) }
+  button:disabled { opacity: .5; cursor: default }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end } .grow { flex: 1 } .between { justify-content: space-between } .center { align-items: center }
+
+  /* menus */
+  .menu { position: relative; display: inline-block }
+  .menu .pop { position: absolute; right: 0; top: calc(100% + 6px); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 6px; min-width: 250px; z-index: 30; display: none }
+  .menu.open .pop { display: block }
+  .pop button, .pop a { all: unset; display: block; padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 13.5px; box-sizing: border-box; width: 100% }
+  .pop button:hover, .pop a:hover { background: var(--hover) }
+  .pop small { display: block; color: var(--ink-muted); font-size: 11.5px }
+  .pop hr { border: 0; border-top: 1px solid var(--line); margin: 5px 4px }
+
+  /* tables */
+  table { border-collapse: collapse; width: 100%; font-size: 13px }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+  th { color: var(--ink-muted); font-weight: 500; font-size: 12px; background: var(--mist); }
+  th:first-child { border-radius: 10px 0 0 10px } th:last-child { border-radius: 0 10px 10px 0 }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }
+  tr.click { cursor: pointer } tr.click:hover td, tr.sel td { background: var(--hover) }
+  .scroll { overflow-x: auto }
+
+  /* pills & notices */
+  .pill { display: inline-block; padding: 1px 10px; border-radius: 9999px; font-size: 12px; font-weight: 500; background: var(--mist); color: var(--ink); white-space: nowrap }
+  .pill.enquiry { background: var(--mist) } .pill.quoted { background: var(--cream); color: #4f4c4d } .pill.confirmed { background: var(--ok-bg); color: var(--ok) }
+  .pill.completed { background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--lavender) } .pill.lost { background: var(--err-bg); color: var(--err) }
+  .pill.needs_review, .pill.warn { background: var(--warn-bg); color: var(--warn) } .pill.approved, .pill.ok { background: var(--ok-bg); color: var(--ok) }
+  .pill.failed, .pill.rejected, .pill.bad { background: var(--err-bg); color: var(--err) } .pill.processing { background: var(--mist) }
+  .issue { padding: 8px 12px; border-radius: 12px; margin: 5px 0; font-size: 13px }
+  .issue.error { background: var(--err-bg); color: var(--err) } .issue.warning { background: var(--warn-bg); color: var(--warn) } .issue.ok { background: var(--ok-bg); color: var(--ok) }
+  .issue small { opacity: .85; display: block }
+  .muted { color: var(--ink-muted) } .small { font-size: 12px } .hidden { display: none !important }
+  .msg { margin-top: 10px; font-size: 13px } .msg.bad { color: var(--err) } .msg.good { color: var(--ok) }
+  details summary { cursor: pointer; color: var(--ink-muted); margin: 10px 0 6px; font-weight: 500 }
+  .empty { text-align: center; padding: 30px 10px; color: var(--ink-muted) }
+  .empty img { width: 84px; border-radius: 50%; margin-bottom: 8px }
+
+  /* toast */
+  #toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); background: var(--charcoal); color: #fff; padding: 11px 20px; border-radius: 9999px; font-weight: 500; z-index: 99; display: none; max-width: 90vw }
+  #toast.bad { background: var(--err) }
+
+  /* documents */
+  .drop { border: 2px dashed var(--lav-soft); border-radius: 20px; padding: 30px 20px; text-align: center; color: var(--ink-muted); background: var(--page) }
+  .drop.over { border-color: var(--orange); color: var(--ink) }
+  .drop b { color: var(--ink); font-size: 16px; display: block; margin-bottom: 4px }
+
+  /* catalog */
+  .subnav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px }
+  .subnav button { all: unset; padding: 7px 15px; border-radius: 9999px; cursor: pointer; font-weight: 500; color: var(--ink-muted); border: 1.5px solid var(--line) }
+  .subnav button.on { background: var(--mist); color: var(--ink); border-color: var(--mist) }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px }
+  .pcard { border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px; background: var(--surface); cursor: pointer; display: flex; flex-direction: column; gap: 6px }
+  .pcard:hover { border-color: var(--lavender) }
+  .pcard h4 { margin: 0; font-size: 15px; font-weight: 600 }
+  .pcard .price { font-size: 13px } .pcard .price b { font-size: 24px; color: var(--orange); font-weight: 700 }
+  .hotelcols { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px }
+  .hotelcols div { background: var(--page); border-radius: 14px; padding: 10px 12px; font-size: 13px }
+  .hotelcols b { display: block; margin-bottom: 4px }
+
+  /* review & editor */
+  .actionbar { position: sticky; bottom: 0; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; background: var(--surface); border-top: 1px solid var(--line);
+               margin: 18px -24px -22px; padding: 12px 24px; border-radius: 0 0 var(--r-card) var(--r-card); z-index: 5 }
+  .versionbox { background: var(--page); border-radius: 16px; padding: 12px 14px; margin-top: 10px }
+  .edsec { border-top: 1px solid var(--line); padding-top: 6px; margin-top: 10px }
+  .edblock { border: 1px solid var(--line); border-radius: 16px; padding: 4px 14px 10px; margin: 10px 0 }
+  .edblock > summary { color: var(--ink); margin: 8px 0 }
+  .edgrid h4 { margin: 12px 0 6px; font-size: 13px; font-weight: 600 }
+  table.ed td { padding: 3px 4px; border-bottom: 1px solid var(--line) } table.ed input, table.ed select, table.ed textarea { padding: 5px 7px; font-size: 12.5px; border-radius: 8px }
+  table.ed input[type=checkbox] { width: auto }
+  table.costing td:nth-child(2) { min-width: 260px } table.costing td { white-space: normal }
+  .up { color: var(--err); font-weight: 600 } .downc { color: var(--ok); font-weight: 600 }
+  .banner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: space-between; background: var(--cream); color: #4f4c4d; border-radius: 18px; padding: 12px 16px; margin-bottom: 16px }
+  .banner.lav { background: var(--mist); color: var(--ink) }
+  .opts { display: grid; gap: 8px; margin-top: 10px }
+  .opt { border: 1.5px solid var(--line); border-radius: 14px; padding: 9px 12px; display: flex; justify-content: space-between; gap: 8px; align-items: center; cursor: pointer }
+  .opt.on { border-color: var(--lavender); background: var(--mist) } .opt b { font-size: 15px }
+  .chart { width: 100%; height: auto; display: block } .chart text { fill: var(--ink-muted); font-size: 11px; font-family: Poppins, sans-serif }
+  .legendrow { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; margin-top: 6px } .legendrow span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--c); margin-right: 6px; vertical-align: -1px }
+  /* pipeline board */
+  .board { display: grid; grid-template-columns: repeat(5, minmax(210px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 8px }
+  .col { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 12px; min-height: 180px }
+  .col h4 { margin: 2px 4px 10px; font-size: 13px; font-weight: 600; display: flex; justify-content: space-between; text-transform: capitalize }
+  .col h4 span { color: var(--ink-muted); font-weight: 400 }
+  .tcard { border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; background: var(--surface) }
+  .tcard:hover { border-color: var(--lavender) }
+  .tcard b { display: block; font-weight: 500; font-size: 13.5px; line-height: 1.35 }
+  .tcard .meta { font-size: 12px; color: var(--ink-muted) }
+  .due { color: var(--err); font-weight: 600 }
+
+  /* pipeline bar */
+  .pbar { display: flex; height: 14px; border-radius: 9999px; overflow: hidden; background: var(--mist); margin: 6px 0 10px }
+  .pbar i { display: block; height: 100% }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px }
+  .legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-right: 6px }
+  .bar { height: 8px; border-radius: 9999px; background: var(--lavender) }
+
+  /* trip workspace */
+  .day { border: 1px solid var(--line); border-radius: 18px; padding: 12px 14px; margin-bottom: 10px; background: var(--surface) }
+  .dayhead { display: flex; gap: 8px; align-items: center; flex-wrap: wrap }
+  .dnum { font-weight: 700; color: var(--orange); font-size: 24px; line-height: 1; min-width: 42px }
+  .day input.title { flex: 1; min-width: 180px; font-weight: 500 }
+  .totals td { border: 0; padding: 4px 0 } .totals tr.sum td { border-top: 1px solid var(--line); padding-top: 10px; font-weight: 700; font-size: 16px }
+  .bigprice { font-size: 28px; font-weight: 700; color: var(--orange); line-height: 1.2 }
+  .note { border-left: 3px solid var(--lav-soft); padding: 4px 10px; margin: 8px 0; font-size: 13px }
+  .note small { display: block; color: var(--ink-muted); font-size: 11.5px }
+  .rail .card { padding: 18px 20px }
+  .quicklinks { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 4px }
+
+  @media (max-width: 1100px) { .g-main { grid-template-columns: minmax(0, 1fr) } .g3 { grid-template-columns: repeat(2, minmax(0,1fr)) } }
+  @media (max-width: 860px) {
+    .app { grid-template-columns: minmax(0, 1fr) }
+    aside.side { position: sticky; top: 0; height: auto; flex-direction: row; align-items: center; padding: 8px 10px; z-index: 20; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line) }
+    .brand { padding: 0 6px 0 0 } .brand img { width: 44px; height: 44px; object-fit: cover; object-position: left; padding: 2px } .brand small, .side .foot { display: none }
+    .nav { display: flex; gap: 2px } .nav button { padding: 8px 10px; width: auto } .nav button span.lbl { display: none }
+    main { padding: 18px 16px 60px } .g2, .g3 { grid-template-columns: minmax(0, 1fr) }
+    .board { grid-template-columns: repeat(5, 240px) }
+    .dots { display: none }
+  }
+  @media print { aside.side, .noprint { display: none !important } .app { display: block } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><img src="/static/brand/logo.png" alt="Travel Episodes"><small>Studio · rates &amp; trips</small></div>
+    <nav class="nav" id="mainnav"></nav>
+    <div class="foot" id="sidefoot"></div>
+  </aside>
+  <main id="main"></main>
+</div>
+<div id="toast"></div>
+<script src="/static/review.js"></script>
+<script src="/static/quotes.js"></script>
+<script src="/static/history.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
